@@ -11,7 +11,7 @@ class ControladoraServicoEventos{
         void cadastrar ();
         void excluir ();
         void alterar ();
-        void pesquisar (CodigoEvento codigo) const;
+        Evento pesquisar (CodigoEvento codigo) const;
 };
 
 class ControladoraApresentacaoEventos{

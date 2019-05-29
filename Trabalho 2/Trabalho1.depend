@@ -101,3 +101,30 @@
 1559058996 source:d:\documentos\unb\tp1\trabalho tp1 parte 1\codeblocks\main.cpp
 	"controladoraEventos.h"
 
+1559049263 source:d:\documentos\unb\tp1_2\trabalho 2\dominios.cpp
+	"dominios.h"
+
+1559059618 d:\documentos\unb\tp1_2\trabalho 2\dominios.h
+	<iostream>
+	<ctype.h>
+	<stdexcept>
+	<string>
+	<string.h>
+	<conio.h>
+
+1559049263 source:d:\documentos\unb\tp1_2\trabalho 2\entidades.cpp
+	"entidades.h"
+
+1559049263 d:\documentos\unb\tp1_2\trabalho 2\entidades.h
+	"dominios.h"
+
+1559058996 source:d:\documentos\unb\tp1_2\trabalho 2\main.cpp
+	"controladoraEventos.h"
+
+1559135851 d:\documentos\unb\tp1_2\trabalho 2\controladoraeventos.h
+	"entidades.h"
+	"dominios.h"
+
+1559137810 source:d:\documentos\unb\tp1_2\trabalho 2\controladoraeventos.cpp
+	"controladoraEventos.h"
+
