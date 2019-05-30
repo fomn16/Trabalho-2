@@ -32,12 +32,8 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Linker>
-			<Add library="curses/pdcurses.lib" />
-		</Linker>
 		<Unit filename="controladoraEventos.cpp" />
 		<Unit filename="controladoraEventos.h" />
-		<Unit filename="curses.h" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.h" />
 		<Unit filename="entidades.cpp" />
