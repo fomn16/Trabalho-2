@@ -5,7 +5,7 @@
 ///////////////////////////////  Servicos  //////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
-void ControladoraServicoEventos::cadastrar(){
+void CntrSEventos::cadastrar(){
     Evento evento;
     string stringCodigo, stringNome, stringCidade, stringEstado, stringClasse, stringFaixa;
 
@@ -61,7 +61,7 @@ void ControladoraServicoEventos::cadastrar(){
     getch();
 }
 
-Evento ControladoraServicoEventos::pesquisar(CodigoEvento codigo) const{
+Evento CntrSEventos::pesquisar(CodigoEvento codigo) const{
     cout<<"*o banco de dados foi consultado*"<<endl;
 
     Evento evento;
@@ -97,10 +97,10 @@ Evento ControladoraServicoEventos::pesquisar(CodigoEvento codigo) const{
     return evento;
 }
 
-void ControladoraServicoEventos::excluir(){
+void CntrSEventos::excluir(){
 }
 
-void ControladoraServicoEventos::alterar(){
+void CntrSEventos::alterar(){
 }
 
 
@@ -109,12 +109,12 @@ void ControladoraServicoEventos::alterar(){
 /////////////////////////////////////////////////////////////////////////////////
 
 
-void ControladoraApresentacaoEventos::operacaoExecutada() const{
+void CntrAEventos::operacaoExecutada() const{
     cout<<"pressione qualquer botao para continuar"<<endl;
     getch();
 }
 
-void ControladoraApresentacaoEventos::apresentarOpcoes(){
+void CntrAEventos::apresentarOpcoes(){
     cout<<"Selecione uma opcao:"<<endl;
     cout<<"1 - Apresentar todos os eventos"<<endl;
     cout<<"2 - Ver dados de um evento"<<endl;
@@ -124,7 +124,7 @@ void ControladoraApresentacaoEventos::apresentarOpcoes(){
     cout<<"6 - Encerrar"<<endl;
 }
 
-void ControladoraApresentacaoEventos::apresentarTodos() const{
+void CntrAEventos::apresentarTodos() const{
     int nEventos = 1;
     cout<<"Eventos cadastrados:"<<endl;
     for(int i = 0; i<nEventos; i++){
@@ -133,7 +133,7 @@ void ControladoraApresentacaoEventos::apresentarTodos() const{
     operacaoExecutada();
 }
 
-void ControladoraApresentacaoEventos::apresentarEvento() const{
+void CntrAEventos::apresentarEvento() const{
     string inputCodigoEvento;
     CodigoEvento codigo;
     while(true){
@@ -174,7 +174,7 @@ void ControladoraApresentacaoEventos::apresentarEvento() const{
     }
 }
 
-void ControladoraApresentacaoEventos::executar(){
+void CntrAEventos::executar(){
     unsigned int escolha = 0;
     while (escolha != 6){
         CLS;

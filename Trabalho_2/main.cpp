@@ -2,6 +2,6 @@
 #include "curses.h"
 
 int main(){
-    ControladoraApresentacaoEventos controladora;
+    CntrAEventos controladora;
     controladora.executar();
 }

@@ -5,7 +5,7 @@
 #include "dominios.h"
 
 
-class ControladoraServicoEventos{
+class CntrSEventos{
     private:
     public:
         void cadastrar ();
@@ -14,7 +14,7 @@ class ControladoraServicoEventos{
         Evento pesquisar (CodigoEvento codigo) const;
 };
 
-class ControladoraApresentacaoEventos{
+class CntrAEventos{
     private:
         static const unsigned int NUMERO_OPCOES = 6;
         static const unsigned int OPCAO_APRESENTAR_TODOS = 1;
@@ -31,7 +31,7 @@ class ControladoraApresentacaoEventos{
 
         void operacaoExecutada() const;
 
-        ControladoraServicoEventos controladoraServicoEventos;
+        CntrSEventos controladoraServicoEventos;
 
     public:
         void executar();

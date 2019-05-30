@@ -33,3 +33,37 @@
 	<stdio.h>
 	<wchar.h>
 
+1559238177 source:d:\documentos\unb\tp1_2\trabalho_2\dominios.cpp
+	"dominios.h"
+
+1559238177 d:\documentos\unb\tp1_2\trabalho_2\dominios.h
+	<iostream>
+	<ctype.h>
+	<stdexcept>
+	<string>
+	<string.h>
+	<conio.h>
+
+1559238177 source:d:\documentos\unb\tp1_2\trabalho_2\entidades.cpp
+	"entidades.h"
+
+1559238177 d:\documentos\unb\tp1_2\trabalho_2\entidades.h
+	"dominios.h"
+
+1559239590 source:d:\documentos\unb\tp1_2\trabalho_2\main.cpp
+	"controladoraEventos.h"
+	"curses.h"
+
+1559239484 d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.h
+	"entidades.h"
+	"dominios.h"
+
+1559238177 d:\documentos\unb\tp1_2\trabalho_2\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1559239439 source:d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.cpp
+	"controladoraEventos.h"
+
