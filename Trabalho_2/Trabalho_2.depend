@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1559235251 source:c:\users\lari1\documents\trabalho_2\controladoraeventos.cpp
+	"controladoraEventos.h"
+
+1559235251 c:\users\lari1\documents\trabalho_2\controladoraeventos.h
+	"entidades.h"
+	"dominios.h"
+
+1559235251 c:\users\lari1\documents\trabalho_2\entidades.h
+	"dominios.h"
+
+1559235251 c:\users\lari1\documents\trabalho_2\dominios.h
+	<iostream>
+	<ctype.h>
+	<stdexcept>
+	<string>
+	<string.h>
+	<conio.h>
+
+1559235251 source:c:\users\lari1\documents\trabalho_2\dominios.cpp
+	"dominios.h"
+
+1559235251 source:c:\users\lari1\documents\trabalho_2\entidades.cpp
+	"entidades.h"
+
+1559235599 source:c:\users\lari1\documents\trabalho_2\main.cpp
+	"controladoraEventos.h"
+	"curses.h"
+
+1559091293 c:\users\lari1\documents\trabalho_2\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
