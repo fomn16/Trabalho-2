@@ -61,7 +61,7 @@ void CntrSEventos::cadastrar(){
     getch();
 }
 
-Evento CntrSEventos::pesquisar(CodigoEvento codigo) const{
+Evento CntrSEventos::pesquisar(CodigoEvento codigo){
     cout<<"*o banco de dados foi consultado*"<<endl;
 
     Evento evento;
@@ -109,11 +109,6 @@ void CntrSEventos::alterar(){
 /////////////////////////////////////////////////////////////////////////////////
 
 
-void CntrAEventos::operacaoExecutada() const{
-    cout<<"pressione qualquer botao para continuar"<<endl;
-    getch();
-}
-
 void CntrAEventos::apresentarOpcoes(){
     cout<<"Selecione uma opcao:"<<endl;
     cout<<"1 - Apresentar todos os eventos"<<endl;
@@ -155,7 +150,7 @@ void CntrAEventos::apresentarEvento() const{
     try{
         CLS;
         Evento evento;
-        evento = controladoraServicoEventos.pesquisar(codigo);
+        evento = cSEventos->pesquisar(codigo);
         operacaoExecutada();
         CLS;
         cout<<"Dados do evento:"<<endl;
@@ -192,14 +187,18 @@ void CntrAEventos::executar(){
                     apresentarEvento();
                 break;
             case OPCAO_CADASTRAR:
-                    controladoraServicoEventos.cadastrar();
+                    cSEventos->cadastrar();
                 break;
             case OPCAO_EXCLUIR:
-                    controladoraServicoEventos.excluir();
+                    cSEventos->excluir();
                 break;
             case OPCAO_ALTERAR:
-                    controladoraServicoEventos.alterar();
+                    cSEventos->alterar();
                 break;
         }
     }
+}
+
+void CntrAEventos::setCSEventos(ISEventos *cSEventos){
+    this->cSEventos = cSEventos;
 }

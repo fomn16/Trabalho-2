@@ -2,6 +2,7 @@
 #include "curses.h"
 
 int main(){
-    CntrAEventos controladora;
-    controladora.executar();
+    ConstrutoraEventos construtora;
+    construtora.build();
+    construtora.cntrAEventos.executar();
 }

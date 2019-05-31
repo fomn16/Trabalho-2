@@ -54,9 +54,10 @@
 	"controladoraEventos.h"
 	"curses.h"
 
-1559239484 d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.h
+1559262641 d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.h
 	"entidades.h"
 	"dominios.h"
+	"interfaceEventos.h"
 
 1559238177 d:\documentos\unb\tp1_2\trabalho_2\curses.h
 	<stdarg.h>
@@ -64,6 +65,10 @@
 	<stdio.h>
 	<wchar.h>
 
-1559239439 source:d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.cpp
+1559260310 source:d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.cpp
 	"controladoraEventos.h"
+
+1559260324 d:\documentos\unb\tp1_2\trabalho_2\interfaceeventos.h
+	"dominios.h"
+	"entidades.h"
 

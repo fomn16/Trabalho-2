@@ -3,18 +3,18 @@
 
 #include "entidades.h"
 #include "dominios.h"
+#include "interfaceEventos.h"
 
-
-class CntrSEventos{
+class CntrSEventos:public ISEventos{
     private:
     public:
         void cadastrar ();
         void excluir ();
         void alterar ();
-        Evento pesquisar (CodigoEvento codigo) const;
+        Evento pesquisar (CodigoEvento codigo);
 };
 
-class CntrAEventos{
+class CntrAEventos:public IAEventos{
     private:
         static const unsigned int NUMERO_OPCOES = 6;
         static const unsigned int OPCAO_APRESENTAR_TODOS = 1;
@@ -29,12 +29,21 @@ class CntrAEventos{
         void apresentarTodos  () const;
         void apresentarEvento () const;
 
-        void operacaoExecutada() const;
-
-        CntrSEventos controladoraServicoEventos;
+        ISEventos *cSEventos;
 
     public:
         void executar();
+        void setCSEventos(ISEventos *cSEventos);
+};
+
+class ConstrutoraEventos{
+    public:
+        CntrAEventos cntrAEventos;
+        CntrSEventos cntrSEventos;
+
+        void build(){
+            cntrAEventos.setCSEventos(&cntrSEventos);
+        }
 };
 
 #endif // CONTROLADORA_EVENTOS_H
