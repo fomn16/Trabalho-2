@@ -33,3 +33,64 @@
 	<stdio.h>
 	<wchar.h>
 
+1559248395 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladoraeventos.cpp
+	"controladoraEventos.h"
+
+1559248395 c:\users\lari1\documents\trabalho-2\trabalho_2\controladoraeventos.h
+	"entidades.h"
+	"dominios.h"
+
+1559248395 c:\users\lari1\documents\trabalho-2\trabalho_2\entidades.h
+	"dominios.h"
+
+1559248395 c:\users\lari1\documents\trabalho-2\trabalho_2\dominios.h
+	<iostream>
+	<ctype.h>
+	<stdexcept>
+	<string>
+	<string.h>
+	<conio.h>
+
+1559248395 source:c:\users\lari1\documents\trabalho-2\trabalho_2\dominios.cpp
+	"dominios.h"
+
+1559248395 source:c:\users\lari1\documents\trabalho-2\trabalho_2\entidades.cpp
+	"entidades.h"
+
+1559434076 source:c:\users\lari1\documents\trabalho-2\trabalho_2\stubs.cpp
+	"stubs.h"
+
+1559434315 c:\users\lari1\documents\trabalho-2\trabalho_2\stubs.h
+	"interfaceUsuario.h"
+	<stdexcept>
+	<iostream>
+
+1559434485 c:\users\lari1\documents\trabalho-2\trabalho_2\interfaceusuario.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1559464514 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.cpp
+	"controladoraUsuario.h"
+	<string.h>
+
+1559458897 c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.h
+	"interfaceUsuario.h"
+	"dominios.h"
+	"curses.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+
+1559248395 c:\users\lari1\documents\trabalho-2\trabalho_2\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1559434498 source:c:\users\lari1\documents\trabalho-2\trabalho_2\main.cpp
+	"controladoraUsuario.h"
+	"interfaceUsuario.h"
+	"stubs.h"
+	"curses.h"
+

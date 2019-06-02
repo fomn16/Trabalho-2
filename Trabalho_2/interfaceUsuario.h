@@ -1,5 +1,5 @@
 #ifndef INTERFACE_USUARIO_H
-#define INTERFACES_USUARIO_H
+#define INTERFACE_USUARIO_H
 
 #include "dominios.h"
 #include "entidades.h"
@@ -12,9 +12,9 @@ class ISUsuario;
 class IAUsuario {
 public:
 
-    virtual void executar(const CPF &cpf) = 0;
+    virtual void executarOpcoes() = 0;
     virtual void setCSUsuario(ISUsuario *CSUsuario) = 0;
-    virtual ~ISUsuario(){}
+    virtual ~IAUsuario(){}
 
 };
 

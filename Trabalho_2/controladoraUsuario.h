@@ -1,8 +1,9 @@
-#ifndef CONTROLADORAS_H_INCLUDED
-#define CONTROLADORAS_H_INCLUDED
+#ifndef CONTROLADORA_USUARIO_H
+#define CONTROLADORAS_USUARIO_H
 
-#include "interfaces.h"
+#include "interfaceUsuario.h"
 #include "dominios.h"
+#include "curses.h"
 
 #include <stdexcept>
 #include <iostream>
@@ -10,42 +11,38 @@
 
 using namespace std;
 
-// Exemplifica controladora com m�ltiplos servi�os providos.
-
-class CntrIUGerente:public IUGerente {
+class CAUsuario:public IAUsuario {
 
 private:
 
-    const static int INCLUIR   = 1;
-    const static int REMOVER   = 2;
+    const static int CADASTRAR = 1;
+    const static int DESCADASTRAR = 2;
     const static int PESQUISAR = 3;
-    const static int EDITAR    = 4;
-    const static int RETORNAR  = 5;
+    const static int EDITAR = 4;
+    const static int SAIR = 5;
 
-    // Refer�ncia para servidor.
+    const int QT_OPCOES = 5;
+    const char* opcoes[5] = {"CADASTRAR","DESCADASTRAR","PESQUISAR", "EDITAR", "SAIR"};
 
-    ILNGerente *cntrLNGerente;
+    ISUsuario* CSUsuario;
 
-    // M�todos respons�veis por prover os servi�os.
+    WINDOW* createWindow(int height, int width, int y, int x, int color_id);
+    void printMenu(WINDOW *win, int y, int x, int highlight, int color_id, int qt_opcoes, const char **opcoes);
+    int getKey(WINDOW* win, int &highlight, int choice, int qt_opcoes);
 
-    void incluir();
-    void remover();
+    void cadastrar();
+    void descadastrar();
     void pesquisar();
     void editar();
 
 public:
 
-    // M�todo previsto na interface por meio do qual � solicitada execu��o da controladora.
+    void executarOpcoes();
 
-    void executar(const Matricula&);
-
-    // M�todo por meio do qual � estabelecido relacionamento com o servidor.
-
-    void setCntrLNGerente(ILNGerente *cntrLNGerente){
-        this->cntrLNGerente = cntrLNGerente;
+    void setCSUsuario(ISUsuario *CSUsuario){
+        this->CSUsuario = CSUsuario;
     }
 };
 
-
-#endif // CONTROLADORAS_H_INCLUDED
+#endif
 

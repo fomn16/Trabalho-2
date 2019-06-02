@@ -52,6 +52,8 @@
 		<Unit filename="entidades.h" />
 		<Unit filename="interfaceUsuario.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="stubs.cpp" />
+		<Unit filename="stubs.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
