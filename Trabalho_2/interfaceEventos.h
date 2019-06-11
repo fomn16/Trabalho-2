@@ -7,7 +7,14 @@
 
 using namespace std;
 
-class ISEventos;
+class ISEventos{
+    public:
+        virtual void cadastrar(Evento evento) = 0;
+        virtual void excluir(CodigoEvento codigo) = 0;
+        virtual Evento pesquisar (CodigoEvento codigo) = 0;
+        virtual void editar() = 0;
+        virtual ~ISEventos(){}
+};
 
 class IAEventos{
     public:
@@ -16,18 +23,9 @@ class IAEventos{
         virtual ~IAEventos(){}
 
         void operacaoExecutada() const{
-            cout<<"pressione qualquer botao para continuar"<<endl;
+            cout<<"pressione qualquer tecla para continuar"<<endl;
             getch();
         }
-};
-
-class ISEventos{
-    public:
-        virtual void cadastrar() = 0;
-        virtual void excluir() = 0;
-        virtual void alterar () = 0;
-        virtual Evento pesquisar (CodigoEvento codigo) = 0;
-
 };
 
 #endif // INTERFACE_EVENTOS_H

@@ -6,11 +6,11 @@
 #include "interfaceEventos.h"
 
 class CntrSEventos:public ISEventos{
-    private:
     public:
-        void cadastrar ();
-        void excluir ();
+        void cadastrar (Evento evento);
+        void excluir (CodigoEvento codigo);
         void alterar ();
+        void editar();
         Evento pesquisar (CodigoEvento codigo);
 };
 
@@ -21,13 +21,16 @@ class CntrAEventos:public IAEventos{
         static const unsigned int OPCAO_APRESENTAR_EVENTO = 2;
         static const unsigned int OPCAO_CADASTRAR = 3;
         static const unsigned int OPCAO_EXCLUIR = 4;
-        static const unsigned int OPCAO_ALTERAR = 5;
+        static const unsigned int OPCAO_EDITAR = 5;
         static const unsigned int OPCAO_ENCERRAR = 6;
 
         void apresentarOpcoes();
 
-        void apresentarTodos  () const;
-        void apresentarEvento () const;
+        void index ();
+        void pesquisar ();
+        void cadastrar ();
+        void excluir ();
+        void editar();
 
         ISEventos *cSEventos;
 

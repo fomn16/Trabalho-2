@@ -2,10 +2,114 @@
 #define CLS system("cls");
 
 /////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////  Servicos  //////////////////////////////////////
+///////////////////////////////  Serviço  ///////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
-void CntrSEventos::cadastrar(){
+void CntrSEventos::cadastrar(Evento evento){
+}
+
+Evento CntrSEventos::pesquisar(CodigoEvento codigo){
+    cout<<"*o banco de dados foi consultado*"<<endl;
+
+    if(codigo.get()!= "123"){
+        throw invalid_argument("Argumento invalido");
+    }
+
+    Evento evento;
+
+    CodigoEvento codigo2;
+    codigo2.set("123");
+    evento.setCodigo(codigo2);
+
+    NomeEvento nome;
+    nome.set("Evento teste");
+    evento.setNome(nome);
+
+    Cidade cidade;
+    cidade.set("Cidade teste");
+    evento.setCidade(cidade);
+
+    Estado estado;
+    estado.set("DF");
+    evento.setEstado(estado);
+
+    ClasseEvento classe;
+    classe.set("1");
+    evento.setClasse(classe);
+
+    FaixaEtaria faixa;
+    faixa.set("L");
+    evento.setFaixa(faixa);
+
+    return evento;
+}
+void CntrSEventos::excluir(CodigoEvento codigo){
+    if(codigo.get()!="123")
+    {
+        throw invalid_argument("Arumento invalido");
+    }
+}
+void CntrSEventos::editar(){
+}
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////  APRESENTACAO  //////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+void CntrAEventos::index(){
+    int nEventos = 1;
+    cout<<"Eventos cadastrados:"<<endl;
+    for(int i = 0; i<nEventos; i++){
+        CodigoEvento codigo;
+        codigo.set("123");
+        Evento evento = cSEventos->pesquisar(codigo);
+        cout<<i<<" - Evento teste, codigo "<<evento.getCodigo().get()<<endl;
+    }
+    operacaoExecutada();
+}
+
+void CntrAEventos::pesquisar(){
+    string inputCodigoEvento;
+    CodigoEvento codigo;
+    while(true){
+        CLS;
+        cout<<"Insira o codigo do evento a ser observado:"<<endl;
+        cin>>inputCodigoEvento;
+        try{
+            codigo.set(inputCodigoEvento);
+        }
+        catch(invalid_argument){
+            CLS;
+            cout<<"Codigo invalido, tente novamente."<<endl;
+            operacaoExecutada();
+            break;
+        }
+
+        try{
+            CLS;
+            Evento evento;
+            evento = cSEventos->pesquisar(codigo);
+            operacaoExecutada();
+            CLS;
+            cout<<"Dados do evento:"<<endl;
+            cout<<"Codigo do evento: "<<evento.getCodigo().get()<<endl;
+            cout<<"Nome do evento: "<<evento.getNome().get()<<endl;
+            cout<<"Cidade de realizacao do evento: "<<evento.getCidade().get()<<endl;
+            cout<<"Estado de realizacao do evento: "<<evento.getEstado().get()<<endl;
+            cout<<"Classe do evento: "<<evento.getClasse().get()<<endl;
+            cout<<"Faixa etaria do evento: "<<evento.getFaixa().get()<<endl;
+
+            operacaoExecutada();
+            break;
+        }
+        catch(invalid_argument){
+            cout<<"O codigo fornecido nao esta cadastrado"<<endl;
+            operacaoExecutada();
+            break;
+        }
+    }
+}
+
+void CntrAEventos::cadastrar(){
     Evento evento;
     string stringCodigo, stringNome, stringCidade, stringEstado, stringClasse, stringFaixa;
 
@@ -49,65 +153,58 @@ void CntrSEventos::cadastrar(){
             FaixaEtaria faixa;
             faixa.set(stringFaixa);
             evento.setFaixa(faixa);
-            break;
         }
         catch(invalid_argument){
             cout<<"Um dado invalido foi inserido, tente novamente."<<endl;
+            operacaoExecutada();
+            break;
+        }
+        CLS;
+        try{
+            cSEventos->cadastrar(evento);
+            cout<<"*Banco de dados acessado, evento cadastrado*"<<endl<<"pressione qualquer tecla para continuar"<<endl;
             getch();
+            break;
+        }
+        catch(invalid_argument){
+            cout<<"Houve um erro de banco de dados, tente novamente"<<endl;
+            getch();
+            break;
         }
     }
-    CLS;
-    cout<<"*Banco de dados acessado, evento cadastrado*"<<endl<<"pressione qualquer tecla para continuar"<<endl;
-    getch();
 }
 
-Evento CntrSEventos::pesquisar(CodigoEvento codigo){
-    cout<<"*o banco de dados foi consultado*"<<endl;
+void CntrAEventos::excluir(){
+    while(true){
+        CLS;
+        string stringCodigo;
+        CodigoEvento codigo;
 
-    Evento evento;
-
-    CodigoEvento codigo2;
-    codigo2.set("123");
-    evento.setCodigo(codigo2);
-
-    NomeEvento nome;
-    nome.set("Evento teste");
-    evento.setNome(nome);
-
-    Cidade cidade;
-    cidade.set("Cidade teste");
-    evento.setCidade(cidade);
-
-    Estado estado;
-    estado.set("DF");
-    evento.setEstado(estado);
-
-    ClasseEvento classe;
-    classe.set("1");
-    evento.setClasse(classe);
-
-    FaixaEtaria faixa;
-    faixa.set("L");
-    evento.setFaixa(faixa);
-
-
-    if(stoi(codigo.get())!= stoi(evento.getCodigo().get())){
-        throw invalid_argument("Argumento invalido");
+        cout<<"digite o codigo do evento a ser excluido"<<endl;
+        cin>>stringCodigo;
+        try{
+            codigo.set(stringCodigo);
+            try{
+                cSEventos->excluir(codigo);
+                cout<<"Evento excluido"<<endl;
+                operacaoExecutada();
+                break;
+            }
+            catch(invalid_argument){
+                cout<<"Nao ha um evento cadastrado com este codigo"<<endl;
+                operacaoExecutada();
+                break;
+            }
+        }
+        catch(invalid_argument){
+            cout<<"O codigo fornecido e invalido, tente novamente"<<endl;
+            operacaoExecutada();
+        }
     }
-    return evento;
 }
 
-void CntrSEventos::excluir(){
+void CntrAEventos::editar(){
 }
-
-void CntrSEventos::alterar(){
-}
-
-
-/////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////  APRESENTACAO  //////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////
-
 
 void CntrAEventos::apresentarOpcoes(){
     cout<<"Selecione uma opcao:"<<endl;
@@ -117,56 +214,6 @@ void CntrAEventos::apresentarOpcoes(){
     cout<<"4 - Excluir evento"<<endl;
     cout<<"5 - Alterar evento"<<endl;
     cout<<"6 - Encerrar"<<endl;
-}
-
-void CntrAEventos::apresentarTodos() const{
-    int nEventos = 1;
-    cout<<"Eventos cadastrados:"<<endl;
-    for(int i = 0; i<nEventos; i++){
-        cout<<i<<" - Evento teste, codigo 123"<<endl;
-    }
-    operacaoExecutada();
-}
-
-void CntrAEventos::apresentarEvento() const{
-    string inputCodigoEvento;
-    CodigoEvento codigo;
-    while(true){
-        CLS;
-        cout<<"Insira o codigo do evento a ser observado:"<<endl;
-        cin>>inputCodigoEvento;
-        try{
-            codigo.set(inputCodigoEvento);
-            break;
-        }
-        catch(invalid_argument){
-            CLS;
-            cout<<"Codigo invalido."<<endl;
-            operacaoExecutada();
-        }
-    }
-
-    CLS;
-    try{
-        CLS;
-        Evento evento;
-        evento = cSEventos->pesquisar(codigo);
-        operacaoExecutada();
-        CLS;
-        cout<<"Dados do evento:"<<endl;
-        cout<<"Codigo do evento: "<<evento.getCodigo().get()<<endl;
-        cout<<"Nome do evento: "<<evento.getNome().get()<<endl;
-        cout<<"Cidade de realizacao do evento: "<<evento.getCidade().get()<<endl;
-        cout<<"Estado de realizacao do evento: "<<evento.getEstado().get()<<endl;
-        cout<<"Classe do evento: "<<evento.getClasse().get()<<endl;
-        cout<<"Faixa Etaria do evento: "<<evento.getFaixa().get()<<endl;
-
-        operacaoExecutada();
-    }
-    catch(invalid_argument){
-        cout<<"O codigo fornecido nao esta cadastrado"<<endl;
-        operacaoExecutada();
-    }
 }
 
 void CntrAEventos::executar(){
@@ -181,23 +228,29 @@ void CntrAEventos::executar(){
         CLS;
         switch(escolha){
             case OPCAO_APRESENTAR_TODOS:
-                    apresentarTodos();
+                    index();
                 break;
             case OPCAO_APRESENTAR_EVENTO:
-                    apresentarEvento();
+                    pesquisar();
                 break;
             case OPCAO_CADASTRAR:
-                    cSEventos->cadastrar();
+                    cadastrar();
                 break;
             case OPCAO_EXCLUIR:
-                    cSEventos->excluir();
+                    excluir();
                 break;
-            case OPCAO_ALTERAR:
-                    cSEventos->alterar();
+            case OPCAO_EDITAR:
+                    editar();
                 break;
         }
     }
 }
+
+
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////  CONTROLADORA  //////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
 
 void CntrAEventos::setCSEventos(ISEventos *cSEventos){
     this->cSEventos = cSEventos;
