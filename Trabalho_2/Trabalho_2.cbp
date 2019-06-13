@@ -33,12 +33,14 @@
 			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
 			<Add directory="curses" />
+			<Add directory="sqlite3" />
 		</Compiler>
 		<ResourceCompiler>
 			<Add directory="curses" />
 		</ResourceCompiler>
 		<Linker>
 			<Add library="curses/pdcurses.lib" />
+			<Add library="sqlite3/sqlite3.lib" />
 			<Add directory="curses" />
 		</Linker>
 		<Unit filename="controladoraEventos.cpp" />
@@ -52,6 +54,7 @@
 		<Unit filename="entidades.h" />
 		<Unit filename="interfaceUsuario.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="sqlite3.h" />
 		<Unit filename="stubs.cpp" />
 		<Unit filename="stubs.h" />
 		<Extensions>

@@ -1,6 +1,8 @@
 #include "controladoraUsuario.h"
 #include <string.h>
-
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////  APRESENTACAO  //////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 WINDOW* CAUsuario::createWindow(int height, int width, int y, int x, int color_id){
     WINDOW* win;
     int i;
@@ -147,7 +149,6 @@ void CAUsuario::cadastrar(){
 
     // variaveis a serem armazenadas sobre o usuario
     string cpf, senha, numeroCartao, data;
-    int codigoSeguranca;
     char* dado1[20], dado2[20], dado3[20], dado4[20], dado5[20];
 
     getmaxyx(stdscr,max_h,max_w);
@@ -268,6 +269,11 @@ void CAUsuario::pesquisar(){
 };
 
 void CAUsuario::editar(){
+
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////  SERVICOS  //////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
      WINDOW* edita_win;
     int max_h, max_w;
     int highlight = 1, choice = 0;
@@ -319,3 +325,33 @@ void CAUsuario::editar(){
     }
 
 };
+void CSUsuario::conectar() throw (runtime_error) {
+      rc = sqlite3_open(nomeBD, &bd);
+      if( rc != SQLITE_OK )
+        throw runtime_error("Erro na conexao ao banco de dados");
+}
+
+void CSUsuario::desconectar() throw (runtime_error) {
+      rc =  sqlite3_close(bd);
+      if( rc != SQLITE_OK )
+        throw runtime_error("Erro na desconexao ao banco de dados");
+}
+
+int CSUsuario::callback(void *NotUsed, int argc, char **valorColuna, char **nomeColuna){
+      int i;
+      for(i=0; i<argc; i++){
+        printf("%s = %s\n", valorColuna[i], nomeColuna[i] ? nomeColuna[i] : "NULL");
+      }
+      return 0;
+}
+
+void CSUsuario::executar(char* comando) throw (runtime_error) {
+        conectar();
+        rc = sqlite3_exec(bd, comando, callback, 0, &mensagem);
+        if(rc != SQLITE_OK){
+                if (mensagem)
+                        free(mensagem);
+                throw runtime_error("Erro na execucao do comando SQL");
+        }
+        desconectar();
+}

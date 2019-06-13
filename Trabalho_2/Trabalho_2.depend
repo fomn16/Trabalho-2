@@ -70,15 +70,16 @@
 	"entidades.h"
 	<stdexcept>
 
-1559464514 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.cpp
+1560458487 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.cpp
 	"controladoraUsuario.h"
 	<string.h>
 
-1559458897 c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.h
+1560458321 c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.h
 	"interfaceUsuario.h"
 	"dominios.h"
 	"curses.h"
-	<stdexcept>
+	"sqlite3.h"
+	<exception>
 	<iostream>
 	<cstdlib>
 
@@ -93,4 +94,7 @@
 	"interfaceUsuario.h"
 	"stubs.h"
 	"curses.h"
+
+1558637844 c:\users\lari1\documents\trabalho-2\trabalho_2\sqlite3.h
+	<stdarg.h>
 
