@@ -5,18 +5,18 @@
 
 int main(){
 
-    IAUsuario *cntr;
-    ISUsuario  *stub;
+    IAUsuario *cntrA;
+    ISUsuario  *cntrS;
 
-    cntr = new CAUsuario();
-    stub = new Stub();
+    cntrA = new CAUsuario();
+    cntrS = new CSUsuario();
 
-    cntr->setCSUsuario(stub);
+    cntrA->setCSUsuario(cntrS);
 
-    cntr->executarOpcoes();
+    cntrA->executarOpcoes();
 
-    delete cntr;
-    delete stub;
+    delete cntrA;
+    delete cntrS;
 
     return 0;
 }

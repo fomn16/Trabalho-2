@@ -272,7 +272,7 @@ void DataValidade::validar(string dataValidade) const throw (invalid_argument){
     int mes=0;
     int ano=0;
     for (int i =0; i<dataValidade.length();i++){
-        if(dataValidade[i]=='/')
+        if(dataValidade[i]=='-')
         {
             barra++;
         }

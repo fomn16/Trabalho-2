@@ -40,7 +40,7 @@
 	"entidades.h"
 	"dominios.h"
 
-1559248395 c:\users\lari1\documents\trabalho-2\trabalho_2\entidades.h
+1561430315 c:\users\lari1\documents\trabalho-2\trabalho_2\entidades.h
 	"dominios.h"
 
 1559248395 c:\users\lari1\documents\trabalho-2\trabalho_2\dominios.h
@@ -51,30 +51,30 @@
 	<string.h>
 	<conio.h>
 
-1559248395 source:c:\users\lari1\documents\trabalho-2\trabalho_2\dominios.cpp
+1561430315 source:c:\users\lari1\documents\trabalho-2\trabalho_2\dominios.cpp
 	"dominios.h"
 
 1559248395 source:c:\users\lari1\documents\trabalho-2\trabalho_2\entidades.cpp
 	"entidades.h"
 
-1559434076 source:c:\users\lari1\documents\trabalho-2\trabalho_2\stubs.cpp
+1561427268 source:c:\users\lari1\documents\trabalho-2\trabalho_2\stubs.cpp
 	"stubs.h"
 
-1559434315 c:\users\lari1\documents\trabalho-2\trabalho_2\stubs.h
+1561427268 c:\users\lari1\documents\trabalho-2\trabalho_2\stubs.h
 	"interfaceUsuario.h"
 	<stdexcept>
 	<iostream>
 
-1559434485 c:\users\lari1\documents\trabalho-2\trabalho_2\interfaceusuario.h
+1561435937 c:\users\lari1\documents\trabalho-2\trabalho_2\interfaceusuario.h
 	"dominios.h"
 	"entidades.h"
 	<stdexcept>
 
-1560458487 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.cpp
+1561437903 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.cpp
 	"controladoraUsuario.h"
 	<string.h>
 
-1560458321 c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.h
+1561435937 c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.h
 	"interfaceUsuario.h"
 	"dominios.h"
 	"curses.h"
@@ -89,12 +89,73 @@
 	<stdio.h>
 	<wchar.h>
 
-1559434498 source:c:\users\lari1\documents\trabalho-2\trabalho_2\main.cpp
+1561424897 source:c:\users\lari1\documents\trabalho-2\trabalho_2\main.cpp
 	"controladoraUsuario.h"
 	"interfaceUsuario.h"
 	"stubs.h"
 	"curses.h"
 
-1558637844 c:\users\lari1\documents\trabalho-2\trabalho_2\sqlite3.h
+1559061209 c:\users\lari1\documents\trabalho-2\trabalho_2\sqlite3.h
 	<stdarg.h>
+
+1561427469 source:c:\users\lari1\documents\trabalho-2\trabalho_2\containerusuario.cpp
+
+1559061209 source:c:\users\lari1\documents\trabalho-2\trabalho_2\sqlite3.c
+	"config.h"
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	"sqlite_tcl.h"
+	"tcl.h"
+	<ctype.h>
+	"sqlite3rtree.h"
+	<ctype.h>
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<math.h>
 

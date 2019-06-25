@@ -3,25 +3,25 @@
 
 #include "dominios.h"
 
-/// \brief Classe respons·vel pelas informaÁıes do usu·rio.
+/// \brief Classe respons√°vel pelas informa√ß√µes do usu√°rio.
 class Usuario{
     private:
 
-        CPF cpf;///> Vari·vel que guarda o cpf do usuario, composta por um objeto da classe CPF.
-        Senha senha;///> Vari·vel que guarda a senha do usuario, composta por um objeto da classe Senha.
+        CPF cpf;///> Vari√°vel que guarda o cpf do usuario, composta por um objeto da classe CPF.
+        Senha senha;///> Vari√°vel que guarda a senha do usuario, composta por um objeto da classe Senha.
     public:
-        /// \brief funÁıes que recebem um objeto das respectivas classes e os guardam no objeto Usu·rio.
+        /// \brief fun√ß√µes que recebem um objeto das respectivas classes e os guardam no objeto Usu√°rio.
         void setCPF(CPF &cpf);
         void setSenha(Senha &senha);
 
-        /// \brief funÁıes que retornam os objetos previamente guardados por meio do metodo set.
+        /// \brief fun√ß√µes que retornam os objetos previamente guardados por meio do metodo set.
         CPF getCPF();
         Senha getSenha();
 };
 
 class Evento{
     private:
-        /// \brief Vari·veis que guardam objetos dos tipos b·sicos usados pela classe Evento.
+        /// \brief Vari√°veis que guardam objetos dos tipos b√°sicos usados pela classe Evento.
         CodigoEvento codigo;
         NomeEvento nome;
         Cidade cidade;
@@ -30,7 +30,7 @@ class Evento{
         FaixaEtaria faixa;
 
     public:
-        /// \brief funÁıes que recebem um objeto das respectivas classes e os guardam no objeto Eventos.
+        /// \brief fun√ß√µes que recebem um objeto das respectivas classes e os guardam no objeto Eventos.
         void setCodigo(CodigoEvento codigo);
         void setNome(NomeEvento &nome);
         void setCidade(Cidade &cidade);
@@ -38,7 +38,7 @@ class Evento{
         void setClasse(ClasseEvento &classe);
         void setFaixa(FaixaEtaria &faixa);
 
-        /// \brief funÁıes que retornam os objetos previamente guardados por meio do metodo set.
+        /// \brief fun√ß√µes que retornam os objetos previamente guardados por meio do metodo set.
         CodigoEvento getCodigo();
         NomeEvento getNome();
         Cidade getCidade();
@@ -51,7 +51,7 @@ class Evento{
 class Apresentacao{
     private:
 
-        /// \brief Vari·veis que guardam objetos dos tipos b·sicos usados pela classe ApresentaÁ„o.
+        /// \brief Vari√°veis que guardam objetos dos tipos b√°sicos usados pela classe Apresenta√ß√£o.
         CodigoApresentacao codigo;
         Data data;
         Horario horario;
@@ -61,7 +61,7 @@ class Apresentacao{
 
     public:
 
-        /// \brief funÁıes que recebem um objeto das respectivas classes e os guardam no objeto ApresentaÁ„o.
+        /// \brief fun√ß√µes que recebem um objeto das respectivas classes e os guardam no objeto Apresenta√ß√£o.
         void setCodigo(CodigoApresentacao &codigo);
         void setData(Data &data);
         void setHorario(Horario &horario);
@@ -69,7 +69,7 @@ class Apresentacao{
         void setSala(NumeroSala &sala);
         void setDisponibilidade(Disponibilidade &disponibilidade);
 
-        /// \brief funÁıes que retornam os objetos previamente guardados por meio do metodo set.
+        /// \brief fun√ß√µes que retornam os objetos previamente guardados por meio do metodo set.
         CodigoApresentacao getCodigo();
         Data getData();
         Horario getHorario();
@@ -81,24 +81,24 @@ class Apresentacao{
 class Ingresso{
     private:
 
-        /// \brief Vari·vel que guarda objeto do tipo b·sico CodigoIngresso.
+        /// \brief Vari√°vel que guarda objeto do tipo b√°sico CodigoIngresso.
         CodigoIngresso codigo;
 
     public:
-        /// \brief funÁıes que recebem - set - e retornam - get - o cÛdigo para o Ingresso.
+        /// \brief fun√ß√µes que recebem - set - e retornam - get - o c√≥digo para o Ingresso.
         void setCodigo(CodigoIngresso &codigo);
         CodigoIngresso getCodigo();
 };
 
 class CartaoCredito{
     private:
-        /// \brief Vari·veis que guardam objetos dos tipos b·sicos usados pela classe CartaoCredito.
+        /// \brief Vari√°veis que guardam objetos dos tipos b√°sicos usados pela classe CartaoCredito.
         NumeroCartao numero;
         CodigoSeguranca codigo;
         DataValidade data;
 
     public:
-        /// \brief funÁıes que retornam os objetos previamente guardados por meio do metodo set.
+        /// \brief fun√ß√µes que retornam os objetos previamente guardados por meio do metodo set.
         void setNumero(NumeroCartao &numero);
         NumeroCartao getNumero();
         void setCodigo(CodigoSeguranca &codigo);

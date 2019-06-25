@@ -148,8 +148,9 @@ void CAUsuario::cadastrar(){
     const char* teclas[2] = {"CADASTRAR", "VOLTAR"};
 
     // variaveis a serem armazenadas sobre o usuario
-    string cpf, senha, numeroCartao, data;
-    char* dado1[20], dado2[20], dado3[20], dado4[20], dado5[20];
+    CPF cpf; Senha senha; NumeroCartao numero; CodigoSeguranca codigo; DataValidade data;
+    Usuario usuario; CartaoCredito cartao;
+    char dado1[20], dado2[20], dado3[20], dado4[20], dado5[20];
 
     getmaxyx(stdscr,max_h,max_w);
 
@@ -173,20 +174,41 @@ void CAUsuario::cadastrar(){
 
     printMenu(cadastro_win,cadastro_h-5,(cadastro_w)/4, highlight, 2, 2, teclas);
     while(1){
-        choice = getKey(cadastro_win, highlight, choice, 2);
-        printMenu(cadastro_win,cadastro_h-5,(cadastro_w)/4, highlight, 2, 2, teclas);
-        if(choice!=0) break;
-    }
+        // reatribuindo os valores
+        highlight = 1;
+        choice = 0;
+        while(1){
+            choice = getKey(cadastro_win, highlight, choice, 2);
+            printMenu(cadastro_win,cadastro_h-5,(cadastro_w)/4, highlight, 2, 2, teclas);
+            if(choice!=0) break;
+        }
+        //testando dados caso seja confirmado
+        if(choice == 1){
+            // parte a ser implementada
+            try{
+                cpf.set(string(dado1));
+                senha.set(string(dado2));
+                numero.set(string (dado3));
+                codigo.set(string(dado4));
+                data.set(string(dado5));
 
-    //testando dados caso seja confirmado
-    if(choice == 1){
-        // parte a ser implementada
-        return;
-    }
-    else{
-        return;
-    }
+                usuario.setCPF(cpf);
+                usuario.setSenha(senha);
+                cartao.setNumero(numero);
+                cartao.setCodigo(codigo);
+                cartao.setData(data);
 
+                CSUsuario->cadastrar(usuario, cartao);
+                mvwprintw(cadastro_win,cadastro_h/4+7,(cadastro_w)/4,"%s","Cadastrado com sucesso.");
+            }
+            catch(exception &e){
+                mvwprintw(cadastro_win,cadastro_h/4+7,(cadastro_w)/4,"%s",e.what());
+            }
+        }
+        else{
+            return;
+        }
+    }
 };
 
 void CAUsuario::descadastrar(){
@@ -196,8 +218,8 @@ void CAUsuario::descadastrar(){
     int descadastro_h = 20, descadastro_w = 60;
     const char* teclas[2] = {"DESCADASTRAR", "VOLTAR"};
 
-
-    char* dado1[20];
+    CPF cpf;
+    char dado1[20];
 
     getmaxyx(stdscr,max_h,max_w);
 
@@ -211,22 +233,34 @@ void CAUsuario::descadastrar(){
     mvwscanw(descadastro_win,descadastro_h/4+1,(descadastro_w)/8,"%s",dado1);
     noecho();
 
-    printMenu(descadastro_win,descadastro_h-5,(descadastro_w)/4, highlight, 2, 2, teclas);
     while(1){
-        choice = getKey(descadastro_win, highlight, choice, 2);
+        // reatribuindo os valores
+        highlight = 1;
+        choice = 0;
         printMenu(descadastro_win,descadastro_h-5,(descadastro_w)/4, highlight, 2, 2, teclas);
-        if(choice!=0) break;
-    }
+        while(1){
+            choice = getKey(descadastro_win, highlight, choice, 2);
+            printMenu(descadastro_win,descadastro_h-5,(descadastro_w)/4, highlight, 2, 2, teclas);
+            if(choice!=0) break;
+        }
 
-    //testando dados caso seja confirmado
-    if(choice == 1){
-        // parte a ser implementada
-        return;
-    }
-    else{
-        return;
-    }
+        //testando dados caso seja confirmado
+       if(choice == 1){
+            // parte a ser implementada
+            try{
+                cpf.set(string(dado1));
 
+                CSUsuario->descadastrar(cpf);
+                mvwprintw(descadastro_win,descadastro_h/4+7,(descadastro_w)/4,"%s","Descadastrado com sucesso.");
+            }
+            catch(exception &e){
+                mvwprintw(descadastro_win,descadastro_h/4+7,(descadastro_w)/4,"%s",e.what());
+            }
+        }
+        else{
+            return;
+        }
+    }
 };
 
 void CAUsuario::pesquisar(){
@@ -270,15 +304,11 @@ void CAUsuario::pesquisar(){
 
 void CAUsuario::editar(){
 
-/////////////////////////////////////////////////////////////////////////////////
-///////////////////////////////  SERVICOS  //////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////
-
      WINDOW* edita_win;
     int max_h, max_w;
     int highlight = 1, choice = 0;
     int edita_h = 20, edita_w = 60;
-    const char* teclas[2] = {"CADASTRAR", "VOLTAR"};
+    const char* teclas[2] = {"EDITAR", "VOLTAR"};
 
     // variaveis a serem armazenadas sobre o usuario
     char* dado1[20], dado2[20], dado3[20], dado4[20], dado5[20];
@@ -291,10 +321,6 @@ void CAUsuario::editar(){
     echo(); // habilitando echo
 
     mvwprintw(edita_win,edita_h/8,(edita_w)/8,"%s","ALTERACAO DE DADOS");
-    // colocando em italico soh pelo estilo
-    wattron(edita_win, A_BOLD);
-    mvwprintw(edita_win,edita_h/4,(edita_w)/8,"%s","Preencha apenas os campos que deseja modificar");
-    wattroff(edita_win, A_BOLD);
 
     mvwprintw(edita_win,edita_h/4+1,(edita_w)/4,"%s","CPF: ");
     wscanw(edita_win,"%s",dado1);
@@ -325,6 +351,12 @@ void CAUsuario::editar(){
     }
 
 };
+
+/////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////  SERVICOS  //////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+
+
 void CSUsuario::conectar() throw (runtime_error) {
       rc = sqlite3_open(nomeBD, &bd);
       if( rc != SQLITE_OK )
@@ -340,12 +372,12 @@ void CSUsuario::desconectar() throw (runtime_error) {
 int CSUsuario::callback(void *NotUsed, int argc, char **valorColuna, char **nomeColuna){
       int i;
       for(i=0; i<argc; i++){
-        printf("%s = %s\n", valorColuna[i], nomeColuna[i] ? nomeColuna[i] : "NULL");
+        //printf("%s = %s\n", valorColuna[i], nomeColuna[i] ? nomeColuna[i] : "NULL");
       }
       return 0;
 }
 
-void CSUsuario::executar(char* comando) throw (runtime_error) {
+void CSUsuario::executar(const char* comando) throw (runtime_error) {
         conectar();
         rc = sqlite3_exec(bd, comando, callback, 0, &mensagem);
         if(rc != SQLITE_OK){
@@ -354,4 +386,30 @@ void CSUsuario::executar(char* comando) throw (runtime_error) {
                 throw runtime_error("Erro na execucao do comando SQL");
         }
         desconectar();
+}
+
+void CSUsuario::cadastrar(Usuario usuario, CartaoCredito cartao) throw(runtime_error){
+        string comando;
+        comando = "INSERT INTO usuario VALUES (";
+        comando += "'" + usuario.getCPF().get() + "', ";
+        comando += "'" + usuario.getSenha().get() + "');";
+
+        comando += "INSERT INTO cartao VALUES (";
+        comando += "'" + cartao.getNumero().get() + "', ";
+        comando += "'" + to_string(cartao.getCodigo().get()) + "', ";
+        comando += "'" + cartao.getData().get() + "', ";
+        comando += "'" + usuario.getCPF().get() + "')";
+
+        //cout << comando << endl;
+        executar(comando.c_str());
+}
+
+ void CSUsuario::descadastrar(CPF cpf) throw(runtime_error){
+        string comando;
+        comando = "PRAGMA foreign_keys = ON;";
+        comando += "DELETE FROM usuario WHERE cpf = ";
+        comando += "'" + cpf.get() + "'";
+
+        //cout << comando << endl;
+        executar(comando.c_str());
 }

@@ -56,14 +56,14 @@ private:
     static int callback(void *NotUsed, int argc, char **valorColuna, char **nomeColuna);
     void conectar() throw(runtime_error);
     void desconectar() throw(runtime_error);
-    void executar(char* comando) throw(runtime_error);
+    void executar(const char* comando) throw(runtime_error);
 
 public:
 
-    //string cadastrar(const Usuario &usuario, const CartaoCredito &cartaoCredito) throw(runtime_error) = 0;
-    //string descadastrar(const Usuario &usuario) throw(runtime_error) = 0;
-    //string pesquisar(const CPF &cpf) throw(runtime_error) = 0;
-    //string editar(const Usuario &usuario) throw(runtime_error) = 0;
+    void cadastrar(Usuario usuario, CartaoCredito cartaoCredito) throw(runtime_error);
+    void descadastrar(CPF cpf) throw(runtime_error);
+    //Usuario pesquisar(const CPF &cpf) throw(runtime_error) = 0;
+    //bool editar(const Usuario &usuario) throw(runtime_error) = 0;
 };
 #endif
 

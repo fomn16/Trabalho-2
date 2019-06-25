@@ -1,7 +1,7 @@
 #include "stubs.h"
 
 
-void Stub::cadastrar(const Usuario &usuario, const CartaoCredito &cartaoCredito) throw(runtime_error){
+void Stub::cadastrar( Usuario usuario, CartaoCredito cartaoCredito) throw(runtime_error){
 
 
 }
