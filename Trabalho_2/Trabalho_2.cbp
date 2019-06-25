@@ -43,12 +43,17 @@
 		</Linker>
 		<Unit filename="controladoraEventos.cpp" />
 		<Unit filename="controladoraEventos.h" />
+		<Unit filename="controladoraMain.cpp" />
+		<Unit filename="controladoraMain.h" />
+		<Unit filename="controladoraVendas.cpp" />
+		<Unit filename="controladoraVendas.h" />
 		<Unit filename="curses.h" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.h" />
 		<Unit filename="entidades.cpp" />
 		<Unit filename="entidades.h" />
 		<Unit filename="interfaceEventos.h" />
+		<Unit filename="interfaceVendas.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

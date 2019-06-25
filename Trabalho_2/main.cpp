@@ -1,8 +1,7 @@
-#include "controladoraEventos.h"
-#include "curses.h"
+#include "controladoraMain.h"
 
 int main(){
-    ConstrutoraEventos construtora;
+    ConstrutoraMain construtora;
     construtora.build();
-    construtora.cntrAEventos.executar();
+    construtora.cntrMain.executar();
 }

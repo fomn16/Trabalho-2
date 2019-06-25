@@ -12,7 +12,12 @@ class ISEventos{
         virtual void cadastrar(Evento evento) = 0;
         virtual void excluir(CodigoEvento codigo) = 0;
         virtual Evento pesquisar (CodigoEvento codigo) = 0;
-        virtual void editar() = 0;
+
+        virtual void cadastrarApresentacao (Apresentacao apresentacao)=0;
+        virtual void excluirApresentacao (CodigoApresentacao codigo)=0;
+
+        virtual int nApresentacoes (CodigoEvento codigo)= 0;
+        virtual Apresentacao pesquisarApresentacoes (CodigoEvento codigo, int n) = 0;
         virtual ~ISEventos(){}
 };
 

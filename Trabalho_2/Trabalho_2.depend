@@ -50,14 +50,14 @@
 1559238177 d:\documentos\unb\tp1_2\trabalho_2\entidades.h
 	"dominios.h"
 
-1559262734 source:d:\documentos\unb\tp1_2\trabalho_2\main.cpp
-	"controladoraEventos.h"
-	"curses.h"
+1561498125 source:d:\documentos\unb\tp1_2\trabalho_2\main.cpp
+	"controladoraMain.h"
 
-1560262986 d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.h
+1561484214 d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.h
 	"entidades.h"
 	"dominios.h"
 	"interfaceEventos.h"
+	"curses.h"
 
 1559238177 d:\documentos\unb\tp1_2\trabalho_2\curses.h
 	<stdarg.h>
@@ -65,10 +65,33 @@
 	<stdio.h>
 	<wchar.h>
 
-1560262256 source:d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.cpp
+1561484818 source:d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.cpp
 	"controladoraEventos.h"
 
-1560262225 d:\documentos\unb\tp1_2\trabalho_2\interfaceeventos.h
+1561482176 d:\documentos\unb\tp1_2\trabalho_2\interfaceeventos.h
 	"dominios.h"
 	"entidades.h"
+
+1561492109 d:\documentos\unb\tp1_2\trabalho_2\controladoravendas.h
+	"entidades.h"
+	"dominios.h"
+	"interfaceVendas.h"
+	"curses.h"
+
+1561494186 d:\documentos\unb\tp1_2\trabalho_2\interfacevendas.h
+	"dominios.h"
+	"entidades.h"
+
+1561501375 source:d:\documentos\unb\tp1_2\trabalho_2\controladoravendas.cpp
+	"controladoraVendas.h"
+
+1561501759 d:\documentos\unb\tp1_2\trabalho_2\controladoramain.h
+	"entidades.h"
+	"dominios.h"
+	"controladoraEventos.h"
+	"controladoraVendas.h"
+	"curses.h"
+
+1561502084 source:d:\documentos\unb\tp1_2\trabalho_2\controladoramain.cpp
+	"controladoraMain.h"
 
