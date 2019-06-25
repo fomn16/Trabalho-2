@@ -23,9 +23,9 @@ public:
 
     virtual void cadastrar( Usuario usuario, CartaoCredito cartaoCredito) throw(runtime_error) = 0;
     virtual void descadastrar(CPF cpf) throw(runtime_error) = 0;
-    //virtual void pesquisar(const CPF &cpf) throw(runtime_error) = 0;
-    //virtual void editar(const Usuario &usuario) throw(runtime_error) = 0;
-    //virtual ~ISUsuario(){}
+    virtual void pesquisar(CPF cpf) throw(runtime_error) = 0;
+    virtual void editar(Usuario usuario, CartaoCredito cartao) throw(runtime_error) = 0;
+    virtual ~ISUsuario(){}
 };
 
 #endif

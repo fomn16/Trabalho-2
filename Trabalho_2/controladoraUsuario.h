@@ -8,7 +8,6 @@
 
 #include <exception>
 #include <iostream>
-#include <cstdlib>
 
 using namespace std;
 
@@ -53,17 +52,22 @@ private:
     char *mensagem;
     int rc;
 
+    //int inutil();
     static int callback(void *NotUsed, int argc, char **valorColuna, char **nomeColuna);
     void conectar() throw(runtime_error);
     void desconectar() throw(runtime_error);
     void executar(const char* comando) throw(runtime_error);
 
 public:
+    static Usuario usuario;
+    static CartaoCredito cartao;
 
     void cadastrar(Usuario usuario, CartaoCredito cartaoCredito) throw(runtime_error);
     void descadastrar(CPF cpf) throw(runtime_error);
-    //Usuario pesquisar(const CPF &cpf) throw(runtime_error) = 0;
-    //bool editar(const Usuario &usuario) throw(runtime_error) = 0;
+    void pesquisar(CPF cpf) throw(runtime_error);
+    void editar( Usuario usuario, CartaoCredito cartao) throw(runtime_error);
 };
+
+
 #endif
 

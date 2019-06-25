@@ -182,15 +182,16 @@ void CAUsuario::cadastrar(){
             printMenu(cadastro_win,cadastro_h-5,(cadastro_w)/4, highlight, 2, 2, teclas);
             if(choice!=0) break;
         }
+
         //testando dados caso seja confirmado
         if(choice == 1){
             // parte a ser implementada
             try{
-                cpf.set(string(dado1));
-                senha.set(string(dado2));
-                numero.set(string (dado3));
-                codigo.set(string(dado4));
-                data.set(string(dado5));
+                cpf.set(dado1);
+                senha.set(dado2);
+                numero.set(dado3);
+                codigo.set(dado4);
+                data.set(dado5);
 
                 usuario.setCPF(cpf);
                 usuario.setSenha(senha);
@@ -270,8 +271,8 @@ void CAUsuario::pesquisar(){
     int pesquisa_h = 20, pesquisa_w = 60;
     const char* teclas[2] = {"PESQUISAR", "VOLTAR"};
 
-
-    char* dado1[20];
+    CPF cpf;
+    char dado1[20];
 
     getmaxyx(stdscr,max_h,max_w);
 
@@ -285,33 +286,53 @@ void CAUsuario::pesquisar(){
     mvwscanw(pesquisa_win,pesquisa_h/4+1,(pesquisa_w)/8,"%s",dado1);
     noecho();
 
-    printMenu(pesquisa_win,pesquisa_h-5,(pesquisa_w)/4, highlight, 2, 2, teclas);
     while(1){
-        choice = getKey(pesquisa_win, highlight, choice, 2);
+        // reatribuindo os valores
+        highlight = 1;
+        choice = 0;
         printMenu(pesquisa_win,pesquisa_h-5,(pesquisa_w)/4, highlight, 2, 2, teclas);
-        if(choice!=0) break;
-    }
+        while(1){
+            choice = getKey(pesquisa_win, highlight, choice, 2);
+            printMenu(pesquisa_win,pesquisa_h-5,(pesquisa_w)/4, highlight, 2, 2, teclas);
+            if(choice!=0) break;
+        }
 
-    //testando dados caso seja confirmado
-    if(choice == 1){
-        // parte a ser implementada
-        return;
-    }
-    else{
-        return;
+        //testando dados caso seja confirmado
+        if(choice == 1){
+            // parte a ser implementada
+            try{
+                cpf.set(string(dado1));
+                CSUsuario->pesquisar(cpf);
+
+                mvwprintw(pesquisa_win,pesquisa_h/4+2,(pesquisa_w)/4,"%s %s","CPF:",CSUsuario::usuario.getCPF().get().c_str());
+                mvwprintw(pesquisa_win,pesquisa_h/4+3,(pesquisa_w)/4,"%s %s","Senha:",CSUsuario::usuario.getSenha().get().c_str());
+                mvwprintw(pesquisa_win,pesquisa_h/4+5,(pesquisa_w)/4,"%s %s","Numero do Cartao:",CSUsuario::cartao.getNumero().get().c_str());
+                mvwprintw(pesquisa_win,pesquisa_h/4+6,(pesquisa_w)/4,"%s %s","Codigo de Seguranca:",to_string(CSUsuario::cartao.getCodigo().get()).c_str());
+                mvwprintw(pesquisa_win,pesquisa_h/4+7,(pesquisa_w)/4,"%s %s","Data de Validade:",CSUsuario::cartao.getData().get().c_str());
+                mvwprintw(pesquisa_win,pesquisa_h/4+8,(pesquisa_w)/4,"%s","Pesquisa realizada com sucesso.");
+            }
+            catch(exception &e){
+                mvwprintw(pesquisa_win,pesquisa_h/4+7,(pesquisa_w)/4,"%s",e.what());
+            }
+        }
+        else{
+            return;
+        }
     }
 };
 
 void CAUsuario::editar(){
 
-     WINDOW* edita_win;
+    WINDOW* edita_win;
     int max_h, max_w;
     int highlight = 1, choice = 0;
     int edita_h = 20, edita_w = 60;
     const char* teclas[2] = {"EDITAR", "VOLTAR"};
 
     // variaveis a serem armazenadas sobre o usuario
-    char* dado1[20], dado2[20], dado3[20], dado4[20], dado5[20];
+    CPF cpf; Senha senha; NumeroCartao numero; CodigoSeguranca codigo; DataValidade data;
+    Usuario usuario; CartaoCredito cartao;
+    char dado1[20], dado2[20], dado3[20], dado4[20], dado5[20];
 
     getmaxyx(stdscr,max_h,max_w);
 
@@ -333,23 +354,44 @@ void CAUsuario::editar(){
     mvwprintw(edita_win, edita_h/4+7,(edita_w)/4,"%s","Data de Validade: ");
     wscanw(edita_win,"%s",dado5);
     noecho();
-
-    printMenu(edita_win,edita_h-5,(edita_w)/4, highlight, 2, 2, teclas);
     while(1){
-        choice = getKey(edita_win, highlight, choice, 2);
+        // reatribuindo os valores
+        highlight = 1;
+        choice = 0;
         printMenu(edita_win,edita_h-5,(edita_w)/4, highlight, 2, 2, teclas);
-        if(choice!=0) break;
-    }
+        while(1){
+            choice = getKey(edita_win, highlight, choice, 2);
+            printMenu(edita_win,edita_h-5,(edita_w)/4, highlight, 2, 2, teclas);
+            if(choice!=0) break;
+        }
 
-    //testando dados caso seja confirmado
-    if(choice == 1){
-        // parte a ser implementada
-        return;
-    }
-    else{
-        return;
-    }
+        //testando dados caso seja confirmado
+        if(choice == 1){
+         // parte a ser implementada
+            try{
+                cpf.set(dado1);
+                senha.set(dado2);
+                numero.set(dado3);
+                codigo.set(dado4);
+                data.set(dado5);
 
+                usuario.setCPF(cpf);
+                usuario.setSenha(senha);
+                cartao.setNumero(numero);
+                cartao.setCodigo(codigo);
+                cartao.setData(data);
+
+                CSUsuario->editar(usuario, cartao);
+                mvwprintw(edita_win,edita_h/4+9,(edita_w)/4,"%s","Editado com sucesso.");
+            }
+            catch(exception &e){
+                mvwprintw(edita_win,edita_h/4+9,(edita_w)/4,"%s",e.what());
+            }
+        }
+        else{
+            return;
+        }
+    }
 };
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -369,11 +411,28 @@ void CSUsuario::desconectar() throw (runtime_error) {
         throw runtime_error("Erro na desconexao ao banco de dados");
 }
 
+Usuario CSUsuario::usuario;
+CartaoCredito CSUsuario::cartao;
+
 int CSUsuario::callback(void *NotUsed, int argc, char **valorColuna, char **nomeColuna){
-      int i;
-      for(i=0; i<argc; i++){
-        //printf("%s = %s\n", valorColuna[i], nomeColuna[i] ? nomeColuna[i] : "NULL");
+      NotUsed=0;
+      CPF cpf; Senha senha; NumeroCartao numero; CodigoSeguranca codigo; DataValidade data;
+
+      if(argc == 2){
+        cpf.set(valorColuna[0]);
+        CSUsuario::usuario.setCPF(cpf);
+        senha.set(valorColuna[1]);
+        CSUsuario::usuario.setSenha(senha);
       }
+      else{
+        numero.set(valorColuna[0]);
+        CSUsuario::cartao.setNumero(numero);
+        codigo.set(valorColuna[1]);
+        CSUsuario::cartao.setCodigo(codigo);
+        data.set(valorColuna[2]);
+        CSUsuario::cartao.setData(data);
+      }
+
       return 0;
 }
 
@@ -409,6 +468,36 @@ void CSUsuario::cadastrar(Usuario usuario, CartaoCredito cartao) throw(runtime_e
         comando = "PRAGMA foreign_keys = ON;";
         comando += "DELETE FROM usuario WHERE cpf = ";
         comando += "'" + cpf.get() + "'";
+
+        //cout << comando << endl;
+        executar(comando.c_str());
+}
+
+void CSUsuario::pesquisar(CPF cpf) throw(runtime_error){
+     string comando1, comando2;
+
+     comando1 = "SELECT * FROM usuario WHERE cpf = ";
+     comando1 += "'" + cpf.get() + "'";
+     executar(comando1.c_str());
+
+     comando2 = "SELECT * FROM cartao WHERE usuario_cpf = ";
+     comando2 += "'"+ cpf.get() + "'";
+     executar(comando2.c_str());
+
+}
+
+void CSUsuario::editar(Usuario usuario, CartaoCredito cartao) throw(runtime_error){
+        string comando;
+        comando = "PRAGMA foreign_keys = ON;";
+        comando += "UPDATE usuario ";
+        comando += "SET";
+        comando += " senha = '" + usuario.getSenha().get();
+        comando += "' WHERE cpf = '" + usuario.getCPF().get()+"';";
+        comando += "UPDATE cartao ";
+        comando += "SET numero = '" + cartao.getNumero().get();
+        comando += "', codigo = '" + to_string(cartao.getCodigo().get());
+        comando += "',  data = '" + cartao.getData().get();
+        comando += "' WHERE numero = '" + cartao.getNumero().get()+"'";
 
         //cout << comando << endl;
         executar(comando.c_str());

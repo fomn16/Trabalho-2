@@ -65,23 +65,22 @@
 	<stdexcept>
 	<iostream>
 
-1561435937 c:\users\lari1\documents\trabalho-2\trabalho_2\interfaceusuario.h
+1561472139 c:\users\lari1\documents\trabalho-2\trabalho_2\interfaceusuario.h
 	"dominios.h"
 	"entidades.h"
 	<stdexcept>
 
-1561437903 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.cpp
+1561489564 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.cpp
 	"controladoraUsuario.h"
 	<string.h>
 
-1561435937 c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.h
+1561485714 c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.h
 	"interfaceUsuario.h"
 	"dominios.h"
 	"curses.h"
 	"sqlite3.h"
 	<exception>
 	<iostream>
-	<cstdlib>
 
 1559248395 c:\users\lari1\documents\trabalho-2\trabalho_2\curses.h
 	<stdarg.h>
@@ -89,9 +88,11 @@
 	<stdio.h>
 	<wchar.h>
 
-1561424897 source:c:\users\lari1\documents\trabalho-2\trabalho_2\main.cpp
+1561492045 source:c:\users\lari1\documents\trabalho-2\trabalho_2\main.cpp
 	"controladoraUsuario.h"
 	"interfaceUsuario.h"
+	"controladoraAutenticacao.h"
+	"interfaceAutenticacao.h"
 	"stubs.h"
 	"curses.h"
 
@@ -158,4 +159,20 @@
 	<unicode/ubrk.h>
 	<unicode/utf16.h>
 	<math.h>
+
+1561492010 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladoraautenticacao.cpp
+	"controladoraAutenticacao.h"
+
+1561486786 c:\users\lari1\documents\trabalho-2\trabalho_2\interfaceautenticacao.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1561491355 c:\users\lari1\documents\trabalho-2\trabalho_2\controladoraautenticacao.h
+	"interfaceAutenticacao.h"
+	"dominios.h"
+	"curses.h"
+	"sqlite3.h"
+	<exception>
+	<iostream>
 
