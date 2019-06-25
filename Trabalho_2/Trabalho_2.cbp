@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Trabalho1" />
+		<Option title="Trabalho_2" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/Trabalho1" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/Trabalho_2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/Trabalho1" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/Trabalho_2" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -30,30 +30,36 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add option="-std=c++11" />
 			<Add option="-fexceptions" />
+			<Add directory="curses" />
 		</Compiler>
+		<ResourceCompiler>
+			<Add directory="curses" />
+		</ResourceCompiler>
+		<Linker>
+			<Add library="curses/pdcurses.lib" />
+			<Add directory="curses" />
+		</Linker>
 		<Unit filename="controladoraEventos.cpp" />
 		<Unit filename="controladoraEventos.h" />
+		<Unit filename="controladoraMain.cpp" />
+		<Unit filename="controladoraMain.h" />
+		<Unit filename="controladoraVendas.cpp" />
+		<Unit filename="controladoraVendas.h" />
+		<Unit filename="curses.h" />
 		<Unit filename="dominios.cpp" />
 		<Unit filename="dominios.h" />
 		<Unit filename="entidades.cpp" />
 		<Unit filename="entidades.h" />
+		<Unit filename="interfaceEventos.h" />
+		<Unit filename="interfaceVendas.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
 			<debugger />
 			<lib_finder disable_auto="1" />
-			<DoxyBlocks>
-				<comment_style block="2" line="2" />
-				<doxyfile_project output_language="Portuguese" />
-				<doxyfile_build extract_all="1" extract_private="1" extract_static="1" />
-				<doxyfile_warnings />
-				<doxyfile_output />
-				<doxyfile_preprocessor enable_preprocessing="0" />
-				<doxyfile_dot />
-				<general />
-			</DoxyBlocks>
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
