@@ -120,11 +120,11 @@ void CntrMain::executar(){
 
         switch(choice){
             case OPCAO_USUARIO:
-
+                    cnstU->cAUsuario.executarOpcoes();
                     clear();
                 break;
             case OPCAO_AUTENTICACAO:
-
+                    cnstA->cAAutenticacao.executarOpcoes();
                     clear();
                 break;
             case OPCAO_EVENTOS:
@@ -148,7 +148,9 @@ return;
 /////////////////////////////////////////////////////////////////////////////////
 
 
-void CntrMain::setCnsts(ConstrutoraEventos *cnstE, ConstrutoraVendas *cnstV){
+void CntrMain::setCnsts(ConstrutoraAutenticacao *cnstA, ConstrutoraUsuarios *cnstU, ConstrutoraEventos *cnstE, ConstrutoraVendas *cnstV){
+    this->cnstU = cnstU;
+    this->cnstA = cnstA;
     this->cnstE = cnstE;
     this->cnstV = cnstV;
 }

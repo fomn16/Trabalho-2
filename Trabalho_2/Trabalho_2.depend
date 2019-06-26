@@ -33,10 +33,17 @@
 	<stdio.h>
 	<wchar.h>
 
-1559238177 source:d:\documentos\unb\tp1_2\trabalho_2\dominios.cpp
+1559248395 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladoraeventos.cpp
+	"controladoraEventos.h"
+
+1559248395 c:\users\lari1\documents\trabalho-2\trabalho_2\controladoraeventos.h
+	"entidades.h"
 	"dominios.h"
 
-1559238177 d:\documentos\unb\tp1_2\trabalho_2\dominios.h
+1561430315 c:\users\lari1\documents\trabalho-2\trabalho_2\entidades.h
+	"dominios.h"
+
+1559248395 c:\users\lari1\documents\trabalho-2\trabalho_2\dominios.h
 	<iostream>
 	<ctype.h>
 	<stdexcept>
@@ -44,54 +51,287 @@
 	<string.h>
 	<conio.h>
 
-1559238177 source:d:\documentos\unb\tp1_2\trabalho_2\entidades.cpp
-	"entidades.h"
-
-1559238177 d:\documentos\unb\tp1_2\trabalho_2\entidades.h
+1561430315 source:c:\users\lari1\documents\trabalho-2\trabalho_2\dominios.cpp
 	"dominios.h"
 
-1561498125 source:d:\documentos\unb\tp1_2\trabalho_2\main.cpp
-	"controladoraMain.h"
-
-1561484214 d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.h
+1559248395 source:c:\users\lari1\documents\trabalho-2\trabalho_2\entidades.cpp
 	"entidades.h"
+
+1561427268 source:c:\users\lari1\documents\trabalho-2\trabalho_2\stubs.cpp
+	"stubs.h"
+
+1561427268 c:\users\lari1\documents\trabalho-2\trabalho_2\stubs.h
+	"interfaceUsuario.h"
+	<stdexcept>
+	<iostream>
+
+1561472139 c:\users\lari1\documents\trabalho-2\trabalho_2\interfaceusuario.h
 	"dominios.h"
-	"interfaceEventos.h"
+	"entidades.h"
+	<stdexcept>
+
+1561489564 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.cpp
+	"controladoraUsuario.h"
+	<string.h>
+
+1561485714 c:\users\lari1\documents\trabalho-2\trabalho_2\controladorausuario.h
+	"interfaceUsuario.h"
+	"dominios.h"
 	"curses.h"
+	"sqlite3.h"
+	<exception>
+	<iostream>
 
-1559238177 d:\documentos\unb\tp1_2\trabalho_2\curses.h
+1559248395 c:\users\lari1\documents\trabalho-2\trabalho_2\curses.h
 	<stdarg.h>
 	<stddef.h>
 	<stdio.h>
 	<wchar.h>
 
-1561484818 source:d:\documentos\unb\tp1_2\trabalho_2\controladoraeventos.cpp
+1561492045 source:c:\users\lari1\documents\trabalho-2\trabalho_2\main.cpp
+	"controladoraUsuario.h"
+	"interfaceUsuario.h"
+	"controladoraAutenticacao.h"
+	"interfaceAutenticacao.h"
+	"stubs.h"
+	"curses.h"
+
+1559061209 c:\users\lari1\documents\trabalho-2\trabalho_2\sqlite3.h
+	<stdarg.h>
+
+1561427469 source:c:\users\lari1\documents\trabalho-2\trabalho_2\containerusuario.cpp
+
+1559061209 source:c:\users\lari1\documents\trabalho-2\trabalho_2\sqlite3.c
+	"config.h"
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	"sqlite_tcl.h"
+	"tcl.h"
+	<ctype.h>
+	"sqlite3rtree.h"
+	<ctype.h>
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<math.h>
+
+1561492010 source:c:\users\lari1\documents\trabalho-2\trabalho_2\controladoraautenticacao.cpp
+	"controladoraAutenticacao.h"
+
+1561486786 c:\users\lari1\documents\trabalho-2\trabalho_2\interfaceautenticacao.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1561491355 c:\users\lari1\documents\trabalho-2\trabalho_2\controladoraautenticacao.h
+	"interfaceAutenticacao.h"
+	"dominios.h"
+	"curses.h"
+	"sqlite3.h"
+	<exception>
+	<iostream>
+
+1561484818 source:c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\controladoraeventos.cpp
 	"controladoraEventos.h"
 
-1561482176 d:\documentos\unb\tp1_2\trabalho_2\interfaceeventos.h
+1561484214 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\controladoraeventos.h
+	"entidades.h"
+	"dominios.h"
+	"interfaceEventos.h"
+	"curses.h"
+
+1559238177 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\entidades.h
+	"dominios.h"
+
+1561493676 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\dominios.h
+	<iostream>
+	<ctype.h>
+	<stdexcept>
+	<string>
+	<string.h>
+	<conio.h>
+
+1561482176 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\interfaceeventos.h
 	"dominios.h"
 	"entidades.h"
 
-1561492109 d:\documentos\unb\tp1_2\trabalho_2\controladoravendas.h
+1559238177 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\curses.h
+	<stdarg.h>
+	<stddef.h>
+	<stdio.h>
+	<wchar.h>
+
+1559238177 source:c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\entidades.cpp
+	"entidades.h"
+
+1561498125 source:c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\main.cpp
+	"controladoraMain.h"
+
+1561506675 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\controladoramain.h
+	"entidades.h"
+	"dominios.h"
+	"controladoraUsuario.h"
+	"controladoraAutenticacao.h"
+	"controladoraEventos.h"
+	"controladoraVendas.h"
+	"curses.h"
+
+1561492109 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\controladoravendas.h
 	"entidades.h"
 	"dominios.h"
 	"interfaceVendas.h"
 	"curses.h"
 
-1561494186 d:\documentos\unb\tp1_2\trabalho_2\interfacevendas.h
+1561494186 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\interfacevendas.h
 	"dominios.h"
 	"entidades.h"
 
-1561501375 source:d:\documentos\unb\tp1_2\trabalho_2\controladoravendas.cpp
-	"controladoraVendas.h"
+1561493676 source:c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\controladorausuario.cpp
+	"controladoraUsuario.h"
+	<string.h>
 
-1561501759 d:\documentos\unb\tp1_2\trabalho_2\controladoramain.h
-	"entidades.h"
+1561506052 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\controladorausuario.h
+	"interfaceUsuario.h"
 	"dominios.h"
-	"controladoraEventos.h"
-	"controladoraVendas.h"
 	"curses.h"
+	"sqlite3.h"
+	<exception>
+	<iostream>
 
-1561502084 source:d:\documentos\unb\tp1_2\trabalho_2\controladoramain.cpp
+1561493676 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\interfaceusuario.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1561493676 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\sqlite3.h
+	<stdarg.h>
+
+1561493676 source:c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\dominios.cpp
+	"dominios.h"
+
+1561493676 source:c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\sqlite3.c
+	"config.h"
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	"sqlite_tcl.h"
+	"tcl.h"
+	<ctype.h>
+	"sqlite3rtree.h"
+	<ctype.h>
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<math.h>
+
+1561493676 source:c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\controladoraautenticacao.cpp
+	"controladoraAutenticacao.h"
+
+1561506485 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\controladoraautenticacao.h
+	"interfaceAutenticacao.h"
+	"dominios.h"
+	"curses.h"
+	"sqlite3.h"
+	<exception>
+	<iostream>
+
+1561493676 c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\interfaceautenticacao.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1561502817 source:c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\controladoravendas.cpp
+	"controladoraVendas.h"
+
+1561506720 source:c:\users\felip\onedrive\desktop\nem sei mais\trabalho_2\controladoramain.cpp
 	"controladoraMain.h"
 
